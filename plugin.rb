@@ -4,7 +4,7 @@
 # authors: Angus McLeod
 # url: https://github.com/paviliondev/discourse-wikimedia-auth
 
-gem 'omniauth-mediawiki', :git => 'git://github.com/Hoto-Cocoa/omniauth-mediawiki.git'
+gem 'omniauth-mediawiki', :git => 'https://github.com/Hoto-Cocoa/omniauth-mediawiki.git'
 
 enabled_site_setting :wikimedia_auth_enabled
 
