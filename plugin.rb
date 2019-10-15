@@ -4,8 +4,6 @@
 # authors: Angus McLeod
 # url: https://github.com/paviliondev/discourse-wikimedia-auth
 
-gem 'omniauth-mediawiki'
-
 enabled_site_setting :wikimedia_auth_enabled
 
 register_asset 'stylesheets/common/wikimedia.scss'
