@@ -4,6 +4,8 @@
 # authors: Angus McLeod
 # url: https://github.com/paviliondev/discourse-wikimedia-auth
 
+gem 'omniauth-mediawiki'
+
 enabled_site_setting :wikimedia_auth_enabled
 
 register_asset 'stylesheets/common/wikimedia.scss'
@@ -66,6 +68,9 @@ class WikimediaAuthenticator < ::Auth::ManagedAuthenticator
                         options[:consumer_key] = SiteSetting.wikimedia_consumer_key
                         options[:consumer_secret] = SiteSetting.wikimedia_consumer_secret
                         options[:client_options][:site] = SiteSetting.wikimedia_auth_site
+                        options[:client_options][:authorize_path] = SiteSetting.wikimedia_auth_path
+                        options[:client_options][:access_token_path] = SiteSetting.wikimedia_token_path
+                        options[:client_options][:request_token_path] = SiteSetting.wikimedia_request_path
                         
                         def strategy.callback_url
                           SiteSetting.wikimedia_callback_url
